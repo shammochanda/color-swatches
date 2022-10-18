@@ -1,0 +1,23 @@
+.fullbox {
+  margin-top: 20px;
+  height: 100%;
+  display: flex;
+}
+
+.layers {
+  width: 25%;
+  height: 70vh;
+  background-color: red;
+}
+
+.colors {
+  width: 57%;
+  height: 70vh;
+  /* background-color: green; */
+}
+
+.getColors {
+  width: 18%;
+  height: 70vh;
+  background-color: blue;
+}

@@ -1,0 +1,23 @@
+.first {
+    background-color: black;
+    border: none;
+    border-radius: 15px;
+    height:100%;
+    color: white;
+    /* font-size: max(min(7vw, 40px), 25px); */
+    /* font-size: 100%; */
+    text-align: left;
+    padding: 10px 20px 10px 20px;
+    display: flex;
+}
+
+.children {
+    border: none;
+    border-radius: 15px;
+    height:80%;
+    /* font-size: max(min(7vw, 40px), 25px); */
+    /* font-size: 100%; */
+    text-align: left;
+    padding: 10px 20px 10px 20px;
+    display: flex;
+}
