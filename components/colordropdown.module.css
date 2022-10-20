@@ -1,0 +1,31 @@
+.Dropdown {
+    position: relative;
+    left: 20px;
+}
+
+input.numInput::-webkit-outer-spin-button,
+input.numInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input.numInput[type=number] {
+  -moz-appearance: textfield;
+}
+
+.Dropdown input[type=number] {
+    width: 35px;
+}
+
+.Dropdown input[type=range] {
+    margin-right: 10px;
+}
+
+.Dropdown > li {
+    list-style-type: none;
+}
+
+.Dropdown > li:before {
+    content: none;
+}

@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap");
+
+.toplayer {
+    font-family: Montserrat, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: left;
+
+}
+
+.layer:before {
+  content: "˃";
+  /* margin-left: 20px; */
+  margin-right: 10px;
+}
+
+.layer {
+  font-family: Montserrat, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  list-style-type: none;
+  /* display: flex; */
+  /* justify-content: left; */
+  /* text-align: left; */
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.details {
+  position: relative;
+  left: 25px;
+  width: 80%
+}
+
+.details > li:before {
+  content: "˃";
+  /* margin-left: 20px; */
+  margin-right: 10px;
+}
+
+.details li {
+  margin-top: 10px;
+  list-style-type: none;
+}
+
+.details > li {
+    cursor: pointer;
+}
+
+
+.layerplacement {
+    position: relative;
+    left: 20px;
+}
+
+.layerplacement > li {
+   list-style-type: none; 
+}
+
+.layerplacement > li:before {
+    content: none;
+}
+
+/* .layercontrol {
+    list-style-type: none;
+}
+
+.layercontrol:before {
+    content: none;
+} */

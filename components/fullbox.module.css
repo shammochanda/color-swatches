@@ -5,19 +5,36 @@
 }
 
 .layers {
-  width: 25%;
+  width: 30%;
   height: 70vh;
-  background-color: red;
+  font-family: Helvetica, Arial, sans-serif;
+  /* background-color: red; */
 }
 
 .colors {
-  width: 57%;
+  width: 70%;
   height: 70vh;
+  padding-right: 15px;
   /* background-color: green; */
 }
 
-.getColors {
+/* .getColors {
   width: 18%;
   height: 70vh;
   background-color: blue;
+} */
+@media (max-width: 912px) {
+  .fullbox {
+    display: block;
+  }
+  .layers {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+  }
+  .colors {
+    width: 100%;
+    padding-left: 15px;
+    /* height: 100%; */
+  }
 }

@@ -1,0 +1,31 @@
+.sidebar {
+    padding-left: 20px;
+}
+
+.sidebar ul {
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar button {
+    color: white;
+    border: none;
+    width: 110px;
+    height:40px;
+    font-family: Roboto, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: rgb(0, 152, 240);
+    border-radius:10px;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+.sidebar span {
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.sidebar button:hover {
+    background-color: rgb(0, 86, 126);
+}

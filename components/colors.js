@@ -1,26 +1,12 @@
 import { Fragment } from "react";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { colorActions } from "../store/colors";
 import classes from "./colors.module.css";
 
 const Colors = () => {
-  const [divTree, setDivTree] = useState({
-    num: 1,
-    bgcolor: "rgb(0,0,0)",
-    fontcolor: "rgb(1,1,1)",
-    children: [
-      {
-        num: 2,
-        bgcolor: [255,255,255],
-        fontcolor: [0,0,0],
-        children: [{
-            num: 3,
-            bgcolor: [155,0,0],
-            fontcolor: [0,0,0],
-            children: [],
-          }],
-      },
-    ],
-  });
+  const colorValues = useSelector((state) => state.colors.layerColors);
+  const colorTree = useSelector((state) => state.colors.layerNesting);
 
   const colorArr = [
     {
@@ -35,75 +21,45 @@ const Colors = () => {
         {children.length !== 0 &&
           children.map((child) => (
             <div
+              key={child.num}
               className={classes.children}
               style={{
-                backgroundColor: `rgb(${child["bgcolor"]})`,
-                color: `rgb(${child["fontcolor"]})`,
+                backgroundColor: `rgba(${
+                  colorValues[child.num - 1]["background"]["r"]
+                },${colorValues[child.num - 1]["background"]["g"]},${
+                  colorValues[child.num - 1]["background"]["b"]
+                },${colorValues[child.num - 1]["background"]["a"]})`,
+                color: `rgba(${colorValues[child.num - 1]["font"]["r"]},${
+                  colorValues[child.num - 1]["font"]["g"]
+                },${colorValues[child.num - 1]["font"]["b"]},${
+                  colorValues[child.num - 1]["font"]["a"]
+                })`,
               }}
             >
-              Sample Text {returnDiv(child["children"])}
+              Sample Text{" "}
+              <div className={classes.smallblock}>
+                {returnDiv(child["children"])}
+              </div>
             </div>
           ))}{" "}
       </Fragment>
     );
   };
 
-  //   for (let i = 0; i < divTree.length; i++) {
-  //     //check div num
-  //   }
-
   return (
-    <div className={classes.first}>
-      Sample Text {returnDiv(divTree["children"])}
+    <div
+      className={classes.first}
+      style={{
+        backgroundColor: `rgba(${colorValues[0]["background"]["r"]},${colorValues[0]["background"]["g"]},${colorValues[0]["background"]["b"]},${colorValues[0]["background"]["a"]})`,
+        color: `rgba(${colorValues[0]["font"]["r"]},${colorValues[0]["font"]["g"]},${colorValues[0]["font"]["b"]},${colorValues[0]["font"]["a"]})`,
+      }}
+    >
+      Sample Text{" "}
+      <div className={classes.smallblock}>
+        {returnDiv(colorTree["children"])}
+      </div>
     </div>
   );
 };
 
 export default Colors;
-
-/*
-import React from 'react'
-
-const Tree = {{ data = []}} => {
-    return (
-        <div>
-            <ul>
-             {
-                data.map(tree => (
-                    <TreeNode node ={tree} />
-                ))
-             }
-            </ul>
-        </div>
-    )
-}
-
-const TreeNode = ({node}) => {
-    const [childVisible, setChildVisibility] = useState(false)
-
-    const hasChild = node.chilren ? true : false
-
-    return (
-        <li>
-            <div>
-                {
-                    hasChild && (
-                        <div>
-                            <fontawesomeicon>
-                        </div>
-                    )
-
-                    <div>
-                        
-                    </div>
-                }
-            </div>
-            {
-
-            }
-        </li>
-    )
-}
-
-
-*/
