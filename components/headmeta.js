@@ -4,6 +4,7 @@ const HeadMeta = (props) => {
   return (
     <Head>
       <title>{props.children}</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com"></link>
       <meta name="description" content={props.metacontent} />
       <meta
         name="viewport"
