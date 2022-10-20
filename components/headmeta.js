@@ -5,6 +5,7 @@ const HeadMeta = (props) => {
     <Head>
       <title>{props.children}</title>
       <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
       <meta name="description" content={props.metacontent} />
       <meta
         name="viewport"
